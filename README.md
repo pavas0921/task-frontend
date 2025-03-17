@@ -1,6 +1,6 @@
 # 🧑‍💻 Task Frontend React
 
-Este es un proyecto frontend desarrollado con **React ** que consume una API propia para autenticación y gestión de tareas. Utiliza tecnologías modernas como Material-UI, Redux Toolkit, React Router y más para ofrecer una experiencia eficiente y escalable.
+Este es un proyecto frontend desarrollado con **React 19** que consume una API propia para autenticación y gestión de tareas. Utiliza tecnologías modernas como Material-UI, Redux Toolkit, React Router y más para ofrecer una experiencia eficiente y escalable.
 
 ## 🚀 Características principales
 
