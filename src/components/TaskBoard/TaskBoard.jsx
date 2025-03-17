@@ -3,7 +3,7 @@ import { Grid, Card, CardContent, Typography, Chip, IconButton, Box, Stack, Dial
 import { Edit as EditIcon, Delete as DeleteIcon } from "@mui/icons-material";
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { clearState, getTask, selectTaskState, updateTask} from '../../features/tasks/taskSlice';
+import { clearState, getTask, selectTaskState, updateTask, deleteTaks} from '../../features/tasks/taskSlice';
 import { AddButton } from "../AddButton";
 import { CustomAlert } from "../CustomAlert";
 
@@ -40,7 +40,8 @@ const TaskBoard = () => {
   };
 
   const handleDelete = (taskId) => {
-    console.log("Eliminar tarea con id:", taskId);
+    dispatch(clearState())
+    dispatch(deleteTaks(taskId))
   };
 
   const handleClose = () => {
@@ -88,7 +89,7 @@ const TaskBoard = () => {
                       <IconButton color="primary" onClick={() => handleEdit(task)}>
                         <EditIcon />
                       </IconButton>
-                      <IconButton color="error" onClick={() => handleDelete(task.id)}>
+                      <IconButton color="error" onClick={() => handleDelete(task._id)}>
                         <DeleteIcon />
                       </IconButton>
                     </Stack>

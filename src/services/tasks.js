@@ -1,53 +1,67 @@
-const API_BASE_URL = 'http://localhost:4001'
+const API_BASE_URL = "http://localhost:4001";
 
 export const getTaksByUserID = async (userId) => {
   try {
-    const url = `${API_BASE_URL}/task/user/${userId}`
+    const url = `${API_BASE_URL}/task/user/${userId}`;
     const req = await fetch(url, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-    })
-    const data = await req.json()
-    return Promise.resolve(data)
+    });
+    const data = await req.json();
+    return Promise.resolve(data);
   } catch (error) {
-    return Promise.resolve(error)
+    return Promise.resolve(error);
   }
-}
+};
 
 export const taskRegisterAPI = async (body) => {
   try {
-    const url = `${API_BASE_URL}/task/create`
+    const url = `${API_BASE_URL}/task/create`;
     const req = await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    })
-    const data = await req.json()
-    return Promise.resolve(data)
+    });
+    const data = await req.json();
+    return Promise.resolve(data);
   } catch (error) {
-    return Promise.resolve(error)
+    return Promise.resolve(error);
   }
-}
+};
 
 export const updateTaksAPI = async (body) => {
   try {
-    const url = `${API_BASE_URL}/task/${body._id}`
+    const url = `${API_BASE_URL}/task/${body._id}`;
     const req = await fetch(url, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    })
-    const data = await req.json()
-    return Promise.resolve(data)
+    });
+    const data = await req.json();
+    return Promise.resolve(data);
   } catch (error) {
-    return Promise.resolve(error)
+    return Promise.resolve(error);
   }
-}
+};
 
-
+export const deleteTaskAPI = async (id) => {
+  try {
+    const url = `${API_BASE_URL}/task/${id}`;
+    const req = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await req.json();
+    return Promise.resolve(data);
+  } catch (error) {
+    return Promise.resolve(error);
+  }
+};
